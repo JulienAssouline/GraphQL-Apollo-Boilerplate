@@ -1,22 +1,32 @@
-const { gql } = require('apollo-server-express')
+const { gql } = require("apollo-server-express");
 
 module.exports = gql`
+  scalar Date
+
   type Query {
-    placeholder: QueryPlaceholder
-		placeholderApi: QueryPlaceholder
+    getUser: User
   }
 
-	type QueryPlaceholder {
-		id: ID
-	}
+  type User {
+    id: Int
+    email: String
+    fullname: String
+  }
 
-	type Mutation {
-		placeholder: MutationPlaceholder
-		placeholderApi: MutationPlaceholder
-	}
+  type Mutation {
+    signUp(
+      email: String!
+      password: String!
+      fullname: String!
+    ): SignupResponse!
+    logIn(email: String!, password: String!): LoginResponse!
+  }
 
-	type MutationPlaceholder {
-		id: ID
-	}
-`
+  type SignupResponse {
+    message: String
+  }
 
+  type LoginResponse {
+    message: String
+  }
+`;
