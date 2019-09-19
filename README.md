@@ -8,7 +8,7 @@ To run this boilerplate first do a git clone `git clone https://github.com/Julie
 
 ## Setup
 
-cd into root of folder and run `yarn`
+cd into `GraphQL-Apollo-Boilerplate` and run `yarn`
 
 I'm using postgresql so make sure you have that installed on your computer.
 
